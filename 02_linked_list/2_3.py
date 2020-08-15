@@ -6,6 +6,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 
 from linked_list import LinkedList
 
+
 # ctci.2_3
 # Date: 2020/08/15
 # Filename: 2_3 
@@ -18,10 +19,10 @@ def delete_middle_node(node):
     node.next = node.next.next
     return
 
+
 class Test(unittest.TestCase):
     TEST_DATA = [
-        ([LinkedList(values=[1, 2, 3, 4, 5]), 2], [1, 2, 4, 5]),
-        ([LinkedList(values=[1, 2, 3, 4, 5]), 3], [1, 2, 3, 5])
+        ([LinkedList(values=[5, 4, 3, 2, 1]), 3], [2, 1, 5, 4, 3])
     ]
 
     def test_1(self):
@@ -34,7 +35,6 @@ class Test(unittest.TestCase):
             self.assertEqual(expected, result)
 
         return
-
 
 
 if __name__ == '__main__':
