@@ -10,7 +10,7 @@ from linked_list import LinkedList
 # ctci.2_3
 # Date: 2020/08/15
 # Filename: 2_3 
-# Author: acto_mini
+# Author: koucs
 
 def delete_middle_node(node):
     if node == None or node.next == None:

@@ -8,7 +8,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.1_8
 # Date: 2020/08/15
 # Filename: 1_8 
-# Author: acto_mini
+# Author: koucs
 
 def is_substring(s1, s2):
     return s1 in s2

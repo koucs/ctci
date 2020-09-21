@@ -9,7 +9,7 @@ from linked_list import LinkedList
 # ctci.2_4
 # Date: 2020/08/15
 # Filename: 2_4 
-# Author: acto_mini
+# Author: koucs
 
 def partition(linked_list, n):
     before_list = LinkedList()

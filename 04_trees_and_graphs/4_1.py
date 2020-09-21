@@ -8,7 +8,7 @@ from tree import *
 # ctci.4_1
 # Date: 2020/08/29
 # Filename: 4_1 
-# Author: acto_mini
+# Author: koucs
 
 def is_balanced(root: TreeNode) -> bool:
     if root is None:

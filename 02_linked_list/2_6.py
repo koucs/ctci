@@ -9,7 +9,7 @@ from linked_list import LinkedList, Node
 # ctci.2_6
 # Date: 2020/08/15
 # Filename: 2_6 
-# Author: acto_mini
+# Author: koucs
 
 def find_loop_node(link_list):
     slow = link_list.head

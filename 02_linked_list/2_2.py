@@ -8,7 +8,7 @@ from linked_list import LinkedList
 # ctci.2_2
 # Date: 2020/08/15
 # Filename: 2_2 
-# Author: acto_mini
+# Author: koucs
 
 
 def get_by_bottom(node, n):

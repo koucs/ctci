@@ -9,7 +9,7 @@ from linked_list import LinkedList, Node
 # ctci.2_4
 # Date: 2020/08/15
 # Filename: 2_4 
-# Author: acto_mini
+# Author: koucs
 
 
 def add(node1, node2, carry):

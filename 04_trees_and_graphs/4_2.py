@@ -8,7 +8,7 @@ from graph import *
 # ctci.4_2
 # Date: 2020/08/29
 # Filename: 4_2 
-# Author: acto_mini
+# Author: koucs
 
 
 def search_bfs(g: Graph, start: GraphNode, end: GraphNode) -> bool:

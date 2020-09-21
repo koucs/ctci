@@ -9,7 +9,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.3_7
 # Date: 2020/08/16
 # Filename: 3_7 
-# Author: acto_mini
+# Author: koucs
 
 class AnimalEnum(Enum):
     CAT = 1

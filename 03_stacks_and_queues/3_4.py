@@ -7,7 +7,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.3_4
 # Date: 2020/08/16
 # Filename: 3_4 
-# Author: acto_mini
+# Author: koucs
 
 def move(a, b):
     '''Move from top of one stack to top of other stack'''

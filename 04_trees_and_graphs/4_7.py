@@ -10,7 +10,7 @@ import sys, math, unittest
 # Find common parent node between 2 tree nodes.
 # Date: 2020/09/21
 # Filename: 4_7 
-# Author: acto_mini
+# Author: koucs
 
 
 def scan(root: TreeNode, target: TreeNode) -> bool:

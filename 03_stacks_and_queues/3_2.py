@@ -7,7 +7,7 @@ import unittest
 # ctci.3_2
 # Date: 2020/08/16
 # Filename: 3_2 
-# Author: acto_mini
+# Author: koucs
 
 class StackWithMinimumValue():
 

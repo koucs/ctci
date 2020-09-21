@@ -10,7 +10,7 @@ import sys, math, unittest
 # To see if a binary tree is a binary search tree,
 # Date: 2020/09/20
 # Filename: 4_5 
-# Author: acto_mini
+# Author: koucs
 
 def check_BST(current: Optional[TreeNode], min: int, max: int) -> bool:
     if current is None:

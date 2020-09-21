@@ -11,7 +11,7 @@ import math, unittest
 # ctci.4_3
 # Date: 2020/09/20
 # Filename: 4_3 
-# Author: acto_mini
+# Author: koucs
 
 
 def create_minimal_BST(arr: list, start: int, end: int) -> Optional[TreeNode]:

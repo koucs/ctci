@@ -9,7 +9,7 @@ import sys, math, unittest
 # 2分探索木が与えられたとき、同じ深さのノード同士の連結リストをアルゴリズム
 # Date: 2020/09/20
 # Filename: 4_4 
-# Author: acto_mini
+# Author: koucs
 
 sys.setrecursionlimit(10 ** 8)
 INF = float('inf')

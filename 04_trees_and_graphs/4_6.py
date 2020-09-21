@@ -10,7 +10,7 @@ import sys, math, unittest
 # In order successor of a BST
 # Date: 2020/09/20
 # Filename: 4_6 
-# Author: acto_mini
+# Author: koucs
 
 
 def inorder_successor_bst(current: BstTreeNode) -> Optional[BstTreeNode]:
