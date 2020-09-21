@@ -8,7 +8,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.3_3
 # Date: 2020/08/16
 # Filename: 3_3 
-# Author: acto_mini
+# Author: koucs
 
 class SetStack():
     def __init__(self, size):

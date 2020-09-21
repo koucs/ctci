@@ -8,7 +8,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.2_1
 # Date: 2020/08/15
 # Filename: 2_1 
-# Author: acto_mini
+# Author: koucs
 
 class Node:
 

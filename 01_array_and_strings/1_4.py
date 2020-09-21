@@ -7,7 +7,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.1_4
 # Date: 2020/08/14
 # Filename: 1_4 
-# Author: acto_mini
+# Author: koucs
 
 sys.setrecursionlimit(10 ** 8)
 INF = float('inf')

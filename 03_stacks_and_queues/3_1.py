@@ -8,7 +8,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.3_1
 # Date: 2020/08/16
 # Filename: 3_1 
-# Author: acto_mini
+# Author: koucs
 
 
 class TertiaryStack:

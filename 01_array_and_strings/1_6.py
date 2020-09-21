@@ -8,7 +8,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.1_6
 # Date: 2020/08/14
 # Filename: 1_6 
-# Author: acto_mini
+# Author: koucs
 
 
 def rotate_matrix(matrix, n):

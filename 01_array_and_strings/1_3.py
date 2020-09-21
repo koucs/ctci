@@ -7,7 +7,7 @@ import sys, heapq, bisect, math, itertools, string, queue, datetime, unittest
 # ctci.1_3
 # Date: 2020/08/14
 # Filename: 1_3 
-# Author: acto_mini
+# Author: koucs
 
 def check_permutation(str1, str2):
     if len(str1) != len(str2):
