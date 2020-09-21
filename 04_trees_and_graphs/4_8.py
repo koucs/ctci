@@ -11,14 +11,6 @@ import sys, math, unittest
 # Filename: 4_8 
 # Author: koucs
 
-sys.setrecursionlimit(10 ** 8)
-INF = float('inf')
-mod = 10 ** 9 + 7
-eps = 10 ** -7
-AtoZ = [chr(i) for i in range(65, 65 + 26)]
-atoz = [chr(i) for i in range(97, 97 + 26)]
-
-
 # T1のノードを順々に調べ、T2のルートと一致するノードが発見された場合に部分木判定を行う
 
 def match(n1: Optional[TreeNode], n2: Optional[TreeNode]) -> bool:
