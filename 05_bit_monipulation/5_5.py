@@ -40,12 +40,38 @@ def bit_swap_required(a: int, b: int) -> int:
     return ans
 
 
+def bit_swap_required2(a: int, b: int) -> int:
+    ans = 0
+    c = a ^ b
+    while c != 0:
+        ans += c & 1
+        c = c >> 1
+    return ans
+
+
+def bit_swap_required3(a: int, b: int) -> int:
+    ans = 0
+    c = a ^ b
+    while c != 0:
+        ans += 1
+        c = c & (c - 1)
+    return ans
+
+
 class Test(unittest.TestCase):
     def test_1(self):
         # 31 = 0001 1111, 14 = 0000 1110
         self.assertEqual(bit_swap_required(31, 14), 2)
         self.assertEqual(bit_swap_required(12, 14), 1)
         self.assertEqual(bit_swap_required(7, 14), 2)
+
+        self.assertEqual(bit_swap_required2(31, 14), 2)
+        self.assertEqual(bit_swap_required2(12, 14), 1)
+        self.assertEqual(bit_swap_required2(7, 14), 2)
+
+        self.assertEqual(bit_swap_required3(31, 14), 2)
+        self.assertEqual(bit_swap_required3(12, 14), 1)
+        self.assertEqual(bit_swap_required3(7, 14), 2)
         return
 
 
