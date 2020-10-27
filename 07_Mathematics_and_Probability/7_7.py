@@ -28,11 +28,36 @@ def find_kth_num_of_prime_factors(k: int) -> int:
     return num_list[k - 1]
 
 
+def find_kth_num_of_prime_factors_ans(k: int) -> int:
+    q3 = [3]
+    q5 = [5]
+    q7 = [7]
+    num_list = [1]
+    for i in range(k):
+        if q3[0] < q5[0] and q3[0] < q7[0]:
+            num_list.append(q3.pop(0))
+            q3.append(num_list[-1] * 3)
+            q5.append(num_list[-1] * 5)
+            q7.append(num_list[-1] * 7)
+        elif q5[0] < q7[0]:
+            num_list.append(q5.pop(0))
+            q5.append(num_list[-1] * 5)
+            q7.append(num_list[-1] * 7)
+        else:
+            num_list.append(q7.pop(0))
+            q7.append(num_list[-1] * 7)
+    return num_list[k - 1]
+
+
 class Test(unittest.TestCase):
     def test_1(self):
         self.assertEqual(1, find_kth_num_of_prime_factors(1))
         self.assertEqual(9, find_kth_num_of_prime_factors(5))
         self.assertEqual(63, find_kth_num_of_prime_factors(13))
+
+        self.assertEqual(1, find_kth_num_of_prime_factors_ans(1))
+        self.assertEqual(9, find_kth_num_of_prime_factors_ans(5))
+        self.assertEqual(63, find_kth_num_of_prime_factors_ans(13))
         return
 
 
