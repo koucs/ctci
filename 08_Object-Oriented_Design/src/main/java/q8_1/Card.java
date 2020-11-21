@@ -17,4 +17,8 @@ public abstract class Card {
     this.isAvailable = false;
   }
 
+  public void print() {
+    System.out.printf("%d - %s%n", this.num, this.suit.name());
+  }
+
 }

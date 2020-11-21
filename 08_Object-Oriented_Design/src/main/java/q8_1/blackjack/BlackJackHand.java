@@ -17,7 +17,7 @@ public class BlackJackHand extends Hand<BlackJackCard> {
   }
 
   public List<Integer> scoreList() {
-    List<Integer> scoreList = new ArrayList<Integer>();
+    List<Integer> scoreList = new ArrayList<>();
 
     if (this.cards.size() == 0) {
       return scoreList;
@@ -38,4 +38,20 @@ public class BlackJackHand extends Hand<BlackJackCard> {
 
     return scoreList;
   }
+
+  public boolean busted(){
+    return this.score() > 21;
+  }
+
+
+  public boolean isBlackJack(){
+    if (this.cards.size() != 2){
+      return false;
+    }
+    BlackJackCard first = cards.get(0);
+    BlackJackCard second = cards.get(1);
+    return (first.isAce() && second.isFaceCard())
+            || (first.isFaceCard() && second.isAce());
+  }
+
 }
