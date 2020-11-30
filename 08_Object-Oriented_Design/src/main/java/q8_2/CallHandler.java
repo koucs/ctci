@@ -2,16 +2,13 @@ package q8_2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class CallHandler {
   private static CallHandler instance;
 
   private static final int RANK_LEVELS = 3;
-  private static final int NUM_RESPONDENTS = 10;
+  private static final int NUM_RESPONDENTS = 5;
   private static final int NUM_MANAGERS = 4;
   private static final int NUM_DIRECTORS = 2;
 
@@ -27,20 +24,19 @@ public class CallHandler {
     this.callQueues = new ArrayList<>(RANK_LEVELS);
 
     List<Employee> respondents = new ArrayList<>(NUM_RESPONDENTS);
-    IntStream.range(1, NUM_RESPONDENTS).forEach(i -> respondents.add(new Responder()));
-    this.employees.set(Rank.Responder.getValue(), respondents);
-    this.callQueues.set(Rank.Responder.getValue(), new ArrayList<>());
+    IntStream.range(0, NUM_RESPONDENTS).forEach(i -> respondents.add(new Responder()));
+    this.employees.add(respondents);
+    this.callQueues.add(new ArrayList<>());
 
     List<Employee> managers = new ArrayList<>(NUM_MANAGERS);
-    IntStream.range(1, NUM_MANAGERS).forEach(i -> respondents.add(new Manager()));
-    this.employees.set(Rank.Manager.getValue(), managers);
-    this.callQueues.set(Rank.Manager.getValue(), new ArrayList<>());
+    IntStream.range(0, NUM_MANAGERS).forEach(i -> managers.add(new Manager()));
+    this.employees.add(managers);
+    this.callQueues.add(new ArrayList<>());
 
     List<Employee> directors = new ArrayList<>(NUM_DIRECTORS);
-    IntStream.range(1, NUM_DIRECTORS).forEach(i -> respondents.add(new Director()));
-    this.employees.set(Rank.Director.getValue(), directors);
-    this.callQueues.set(Rank.Director.getValue(), new ArrayList<>());
-
+    IntStream.range(0, NUM_DIRECTORS).forEach(i -> directors.add(new Director()));
+    this.employees.add(directors);
+    this.callQueues.add(new ArrayList<>());
   }
 
   public static CallHandler getInstance() {
@@ -78,7 +74,7 @@ public class CallHandler {
   }
 
   private Employee getHandlerForCall(Call call) {
-    for (int level = call.getRank().getValue(); level < RANK_LEVELS - 1; level++) {
+    for (int level = call.getRank().getValue(); level < RANK_LEVELS; level++) {
       List<Employee> employeeLevel = employees.get(level);
       for (Employee emp : employeeLevel) {
         if (emp.isFree()) {
