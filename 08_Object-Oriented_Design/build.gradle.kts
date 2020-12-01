@@ -9,6 +9,7 @@ plugins {
 //    id("org.springframework.boot") version springBootVersion
 //    id("io.spring.dependency-management") version "1.0.8.RELEASE"
     id("java")
+    id("io.freefair.lombok") version "5.3.0"
     application
 }
 
@@ -24,8 +25,14 @@ dependencies {
 //    implementation("com.google.guava:guava:26.0-jre") // NEW
 //    implementation("org.springframework.boot:spring-boot-starter-web")
 //    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("com.google.guava:guava:30.0-jre")
+    compileOnly("org.projectlombok:lombok:1.18.16")
+    annotationProcessor("org.projectlombok:lombok:1.18.16")
+    testCompileOnly("org.projectlombok:lombok:1.18.16")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.16")
 }
 
 repositories {
     jcenter()
+    mavenCentral()
 }
