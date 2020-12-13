@@ -22,7 +22,7 @@ public class ParkingSpot {
   }
 
   public boolean canFitVehicle(Vehicle v){
-    return isAvailable() && vehicle.canFitInSpot(this);
+    return isAvailable() && v.canFitInSpot(this);
   }
 
   public boolean park(Vehicle v){

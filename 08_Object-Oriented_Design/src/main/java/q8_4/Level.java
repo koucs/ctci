@@ -23,15 +23,15 @@ public class Level {
     int compactSpots = numberSpots / 4;
     int motorCycleSpots = numberSpots - largeSpots - compactSpots;
 
-    IntStream.rangeClosed(0, largeSpots)
+    IntStream.range(0, largeSpots)
         .boxed()
         .collect(Collectors.toList())
         .forEach(i -> spots.add(new ParkingSpot(this, i / SPOTS_PER_LOW, i, VehicleSize.Large)));
-    IntStream.rangeClosed(largeSpots, largeSpots + largeSpots)
+    IntStream.range(largeSpots, largeSpots + largeSpots)
         .boxed()
         .collect(Collectors.toList())
         .forEach(i -> spots.add(new ParkingSpot(this, i / SPOTS_PER_LOW, i, VehicleSize.Compact)));
-    IntStream.rangeClosed(compactSpots + largeSpots, numberSpots)
+    IntStream.range(compactSpots + largeSpots, numberSpots)
         .boxed()
         .collect(Collectors.toList())
         .forEach(
