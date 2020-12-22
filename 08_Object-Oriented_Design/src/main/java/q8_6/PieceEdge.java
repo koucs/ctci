@@ -11,7 +11,6 @@ public class PieceEdge {
   PieceEdge attachedTo; //
 
   public boolean fitsWith(PieceEdge pieceEdge) {
-    // TODO
     // 端同士の連結
     return false;
   }

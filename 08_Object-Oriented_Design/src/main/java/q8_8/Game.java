@@ -7,10 +7,7 @@ import java.util.List;
 
 public class Game {
   private static Game instance;
-
-  @Getter
-  private Board board;
-
+  @Getter private Board board;
   private List<Player> players;
   private final int ROW = 10;
   private final int COLUMN = 10;
@@ -26,6 +23,4 @@ public class Game {
     }
     return instance;
   }
-
-
 }
