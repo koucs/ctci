@@ -7,6 +7,12 @@ public class Application {
 
     print();
 
+    System.out.println("WHITE RECOMMEND");
+    game.getBoard().print_recommend(Color.WHITE);
+    System.out.println("BLACK RECOMMEND");
+    game.getBoard().print_recommend(Color.BLACK);
+
+    System.out.println();
     game.getBoard().placeColor(3, 4, Color.BLACK);
 
     print();

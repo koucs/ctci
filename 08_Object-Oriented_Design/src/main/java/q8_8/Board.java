@@ -35,10 +35,10 @@ public class Board {
     }
 
     int[] results = new int[4];
-    results[0] = flipSection(row - 1, column, color, UP);
-    results[1] = flipSection(row + 1, column, color, DOWN);
-    results[2] = flipSection(row, column - 1, color, LEFT);
-    results[3] = flipSection(row, column + 1, color, RIGHT);
+    results[0] = flipSection(row - 1, column, color, UP, false);
+    results[1] = flipSection(row + 1, column, color, DOWN, false);
+    results[2] = flipSection(row, column - 1, color, LEFT, false);
+    results[3] = flipSection(row, column + 1, color, RIGHT, false);
 
     int flipped = Arrays.stream(results).filter(i -> i > 0).sum();
 
@@ -53,10 +53,8 @@ public class Board {
     return true;
   }
 
-  /**
-   * @return int (-1 is error)
-   */
-  private int flipSection(int row, int column, Color color, Direction direction) {
+  /** @return int (-1 is error) */
+  private int flipSection(int row, int column, Color color, Direction direction, boolean check) {
     int dr = 0, dc = 0;
     if (direction == UP) dr = -1;
     else if (direction == DOWN) dr = 1;
@@ -73,10 +71,9 @@ public class Board {
 
     if (board[row][column].getColor() == color) return 0;
 
-    int flipped = flipSection(row + dr, column + dc, color, direction);
+    int flipped = flipSection(row + dr, column + dc, color, direction, check);
     if (flipped < 0) return -1;
-
-    board[row][column].flip();
+    if (!check) board[row][column].flip();
     return flipped + 1;
   }
 
@@ -110,5 +107,35 @@ public class Board {
       }
       System.out.println();
     }
+  }
+
+  public void print_recommend(Color c) {
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        int score = checkColor(i, j, c);
+        if (board[i][j] != null) {
+          System.out.printf("%s", board[i][j].getColor() == Color.BLACK ? " B " : " W ");
+        } else {
+          System.out.printf(" %s ", score == 0 ? "_" : score);
+        }
+      }
+      System.out.println();
+    }
+  }
+
+  /** @return -1: already placed, 0: could not place, 0< : score */
+  public int checkColor(int row, int column, Color color) {
+    if (board[row][column] != null) {
+      return -1;
+    }
+
+    int[] results = new int[4];
+    results[0] = flipSection(row - 1, column, color, UP, true);
+    results[1] = flipSection(row + 1, column, color, DOWN, true);
+    results[2] = flipSection(row, column - 1, color, LEFT, true);
+    results[3] = flipSection(row, column + 1, color, RIGHT, true);
+
+    int flipped = Arrays.stream(results).filter(i -> i > 0).sum();
+    return Math.max(flipped, 0);
   }
 }
