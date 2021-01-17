@@ -10,7 +10,8 @@ from typing import List
 def count_stairs(n: int, patterns: List) -> List:
     l = []
     for i in patterns:
-        if (n - i) < 0: continue
+        if (n - i) < 0:
+            continue
 
         stairs = count_stairs(n - i, patterns)
         if len(stairs) == 0:
