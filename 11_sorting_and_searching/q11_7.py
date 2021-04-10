@@ -34,6 +34,7 @@ def longest_increasing_subsequence(in_arr: List) -> List:
 
 
 def longest_increasing_subsequence_inbounds(in_arr: List, solutions: List, current_index: int):
+    # O(n^2) algorithm
     if current_index < 0 or len(in_arr) <= current_index:
         return None
     current_element = in_arr[current_index]
