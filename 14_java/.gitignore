@@ -96,3 +96,7 @@ atlassian-ide-plugin.xml
 # oh-my-zsh gradle plugin
 .gradletasknamecache
 /lombok.config
+
+/gradlew*
+/settings.gradle.kts
+/gradle
