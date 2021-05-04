@@ -1,7 +1,7 @@
 package q16_3.deadlock;
 
 /**
- * Q16_1
+ * Q16_3
  * In the famous dining philosophers problem,
  * a bunch of philosophers are sitting around a circular table with one chopstick between each of them.
  * A philosopher needs both chopsticks to eat, and always picks up the left chopstick before the right one.
