@@ -49,13 +49,12 @@ public class LockFactory {
     public boolean declare(int ownerId, int[] resourcesInOrder) {
         HashMap<Integer, Boolean> touchedNodes = new HashMap<>();
         // グラフに頂点(Node)を追加
-        int index = 1;
         touchedNodes.put(resourcesInOrder[0], false);
-        IntStream.range(index, resourcesInOrder.length).forEach(i -> {
-            LockNode prev = this.locks[resourcesInOrder[index - 1]];
-            LockNode curr = this.locks[resourcesInOrder[index]];
+        IntStream.range(1, resourcesInOrder.length).forEach(i -> {
+            LockNode prev = this.locks[resourcesInOrder[i - 1]];
+            LockNode curr = this.locks[resourcesInOrder[i]];
             prev.joinTo(curr);
-            touchedNodes.put(resourcesInOrder[index], false);
+            touchedNodes.put(resourcesInOrder[i], false);
         });
 
         // サイクルができてしまった場合はこの resourcesリストを破棄して false を返却
@@ -69,7 +68,8 @@ public class LockFactory {
         }
 
         // サイクルが検出されなかった場合は、
-        // 実際にスレッドがロックを取得する際に、予告した順番で宣言されていることを確認するための順番を保存する
+        // 実際にスレッドがロックを取得する際 (getLock methodが呼び出される)に
+        // 予告した順番で宣言されていることを確認するための順番を保存する
         LinkedList<LockNode> list = new LinkedList<>();
         for (int j : resourcesInOrder) {
             LockNode resource = this.locks[j];
@@ -80,6 +80,10 @@ public class LockFactory {
         return true;
     }
 
+    /**
+     * ownerID が事前に declare した順番どおりに resourceID を取得しに来た場合のみ、 Lockを返す。
+     * それ以外の場合は null を返却する。
+     */
     public Lock getLock(int ownerId, int resourceID) {
         LinkedList<LockNode> list = lockOrder.get(ownerId);
         if (list == null) {

@@ -53,8 +53,8 @@ public class LockNode {
             visited[this.id] = VisitState.VISITING;
             for (LockNode c : children) {
                 if (c.hasCycle(visited, touchedNode)) return true;
-                visited[this.id] = VisitState.VISITED;
             }
+            visited[this.id] = VisitState.VISITED;
         }
         return false;
     }
